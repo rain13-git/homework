@@ -97,26 +97,27 @@ best_lecturer = Lecturer('имя', 'фамилия')
 best_lecturer.courses_attached += ['Python', 'Git']
 bad_lecturer = Lecturer('name', 'surname')
 bad_lecturer.courses_attached += ['Python']
-print(best_lecturer.courses_attached)
 best_student.rate_for_lecturer(best_lecturer, 'Python', 10)
 best_student.rate_for_lecturer(bad_lecturer, 'Python', 6)
 best_student.rate_for_lecturer(best_lecturer, 'Git', 10)
-print(best_lecturer.grades)
 
 reviewer = Reviewer('Roy', 'Keen')
 reviewer.courses_attached += ['Python']
 reviewer.rate_hw(best_student, 'Python', 10)
 reviewer.rate_hw(bad_student, 'Python', 6)
-
-print(reviewer)
-
 best_lecturer.avr_rate()
-print(best_lecturer)
+best_student.avr_rate()
+bad_lecturer.avr_rate()
+bad_student.avr_rate()
 
+print(best_lecturer)
+print(reviewer)
 print(best_student)
 
-avr_for_students([best_student, bad_student], 'Python')
-avr_for_lecturers([best_lecturer, bad_lecturer],'Python')
+avr_for_students([bad_student,best_student], 'Python')
+avr_for_lecturers([bad_lecturer, best_lecturer], 'Python')
+
+
 
 
 
