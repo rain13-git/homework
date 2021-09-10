@@ -23,7 +23,7 @@ class YaUploader:
     def upload(self, file_path: str):
 
         href = self._get_upload_link()
-
+        print(href)
         if href:
             response = requests.put(href, data=open(file_path, "rb"))
             response.raise_for_status()
@@ -36,10 +36,9 @@ class YaUploader:
 
 
 if __name__ == '__main__':
-    token = ""
+    token = "AQAAAAAm01XcAADLW6GikyrnJkfiqQqS_F5dSgw"
     folder_path = os.getcwd()
-    print(folder_path)
     path_to_file = f"{folder_path}/file.txt"
-    print(path_to_file)
     uploader = YaUploader(token)
-    result = uploader.upload(path_to_file)
+    print(uploader.upload(path_to_file))
+    # result = uploader.upload(path_to_file)
