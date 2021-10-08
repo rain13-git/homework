@@ -6,7 +6,7 @@ import json
 
 class Vkphotos():
 
-    def find_photos(self, vk_id, count,  token_vk="958eb5d439726565e9333aa30e50e0f937ee432e927f0dbd541c541887d919a7c56f95c04217915c32008" ):
+    def find_photos(self, vk_id, count,  token_vk="" ):
         photos_dict = {}
 
         if type(vk_id) is int:
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     # print(S)
     # function_call(S)
 
-    token_Ya = "AQAAAAAm01XcAADLW6GikyrnJkfiqQqS_F5dSgw"
+    token_Ya = ""
 
     if True:
         vk_id = input('Введите vk id: ')
