@@ -1,0 +1,18 @@
+create table if not exists performers(
+	id SERIAL primary key,
+	name VARCHAR(40) not null unique
+);
+
+create table if not exists albums(
+	id serial primary key,
+	name VARCHAR(40) not null unique,
+	year_of_issue integer not null,
+	authorid integer references performers(id) not null
+);
+
+create table if not exists songs(
+	id serial primary key,
+	name VARCHAR(40) not null,
+	duration integer check(duration>0) not null,
+	albumid integer references albums(id) not null
+);
